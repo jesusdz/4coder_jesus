@@ -28,26 +28,26 @@ case TokenBaseKind_Identifier:
 	{
 		String_Const_u8 token_s = SCu8(output_string, token.size);
 		int symbol_type = jesus_symbol_map_find(app, token_s);
-        switch (symbol_type)
-        {
-            case JesusSymbol_Type:
-            {
-                color = defcolor_jesus_type;
-            }break;
-            case JesusSymbol_Macro:
-            {
-                color = defcolor_preproc;
-            }break;
-            case JesusSymbol_Function:
-            {
-                color = defcolor_jesus_function;
-            }break;
-            default:
-            {
-                color = defcolor_text_default;
-            }break;
-        }
-    }
+        	switch (symbol_type)
+        	{
+            		case JesusSymbol_Type:
+            		{
+            			color = defcolor_jesus_type;
+            		}break;
+            		case JesusSymbol_Macro:
+            		{
+            			color = defcolor_preproc;
+            		}break;
+            		case JesusSymbol_Function:
+            		{
+            			color = defcolor_jesus_function;
+            		}break;
+            		default:
+            		{
+            			color = defcolor_text_default;
+            		}break;
+        	}
+	}
 }break;
 ```
 
