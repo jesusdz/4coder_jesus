@@ -6,15 +6,15 @@ Steps to add syntax highlighting for custom types, functions, and macros.
 
 ## Modify 4coder_default_include.cpp
 
-Include symbol_map.h somewhere after 4coder_base_types.cpp
+Include **symbol_map.h** somewhere after **4coder_base_types.cpp**.
 
-Include symbol_map.cpp at the end of the file
+Include **symbol_map.cpp** at the end of the file.
 
 ## Modify 4coder_draw.cpp
 
-Change the signature of the function get_token_color_cpp to also accept a pointer to Application_Lings and a Text_Layout_ID. Pass the proper parameters from the function draw_cpp_token_colors.
+Change the signature of the function _get_token_color_cpp_ to also accept a pointer to _Application_Links_ and a _Text_Layout_ID_. Pass the apropriate parameters from the function _draw_cpp_token_colors_.
 
-Add the following code snippet into get_token_color_cpp to handle TokenBaseKind_Identifier tokens:
+Add the following code snippet into _get_token_color_cpp_ to handle TokenBaseKind_Identifier tokens:
 
 ```C
 // NOTE(jesus): this is the added part
@@ -55,8 +55,8 @@ case TokenBaseKind_Identifier:
 
 ## Modify 4coder_default_framework.cpp
 
-Call symbol_map_init() at the end of default_framework_init.
+Call _symbol_map_init_ at the end of _default_framework_init_.
 
 ## Modify 4coder_default_hooks.cpp
 
-Call symbol_map_update() right after code_index_update_tick(app)
+Call _symbol_map_update_ right after _code_index_update_tick(app)_.
